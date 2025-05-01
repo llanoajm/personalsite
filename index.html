@@ -13,13 +13,13 @@
             --medium-gray: #e0e0e0;
             --dark-gray: #555555;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body, html {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             font-size: 16px;
@@ -28,280 +28,90 @@
             background-color: var(--bg-color);
             height: 100%;
         }
-        
+
         a {
             color: var(--accent-color);
             text-decoration: none;
         }
-        
+
         a:hover {
             text-decoration: underline;
         }
-        
+
         .container {
-            display: flex;
-            min-height: 100%;
-        }
-        
-        .sidebar {
-            width: 220px;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 40px 20px;
-            border-right: 1px solid var(--medium-gray);
-            position: fixed;
-            height: 100%;
-            overflow-y: auto;
         }
-        
-        .content {
-            flex: 1;
-            padding: 40px;
-            margin-left: 220px;
-            max-width: 700px;
-        }
-        
-        .logo {
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-        }
-        
-        .nav {
-            list-style: none;
-        }
-        
-        .nav li {
-            margin-bottom: 15px;
-        }
-        
-        .nav a {
-            color: var(--text-color);
-            font-size: 0.95rem;
-        }
-        
-        .nav a:hover, .nav a.active {
-            color: var(--accent-color);
-        }
-        
-        .contact {
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: var(--dark-gray);
-        }
-        
+
         h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 600;
             margin-bottom: 20px;
         }
-        
+
         h2 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
             margin-top: 40px;
             margin-bottom: 15px;
         }
-        
-        p {
-            margin-bottom: 20px;
-        }
-        
-        .experience {
-            margin-bottom: 30px;
-        }
-        
-        .experience h3 {
-            font-size: 1.1rem;
+
+        h3 {
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 5px;
         }
-        
-        .experience-meta {
-            font-size: 0.9rem;
-            color: var(--dark-gray);
-            margin-bottom: 10px;
+
+        p {
+            margin-bottom: 20px;
         }
-        
-        .highlight {
-            font-weight: 500;
-            color: var(--accent-color);
-        }
-        
+
         section {
-            display: none;
+            margin-bottom: 40px;
         }
-        
-        section.active {
-            display: block;
+
+        .profile-images {
+            display: flex;
+            gap: 15px;
+            margin: 25px 0;
+            flex-wrap: wrap;
         }
-        
-        .tab-buttons {
-            display: none;
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
         }
-        
-        /* Mobile styles */
+
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
+            .profile-images {
+                justify-content: center;
             }
             
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                border-right: none;
-                border-bottom: 1px solid var(--medium-gray);
-                padding: 20px;
-            }
-            
-            .content {
-                margin-left: 0;
-                padding: 20px;
-            }
-            
-            .tab-buttons {
-                display: flex;
-                overflow-x: auto;
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-            }
-            
-            .tab-buttons button {
-                background: none;
-                border: none;
-                padding: 8px 15px;
-                margin-right: 10px;
-                font-size: 0.9rem;
-                cursor: pointer;
-                white-space: nowrap;
-                color: var(--text-color);
-            }
-            
-            .tab-buttons button.active {
-                color: var(--accent-color);
-                border-bottom: 2px solid var(--accent-color);
-            }
-            
-            .nav {
-                display: none;
+            .profile-image {
+                width: 150px;
+                height: 150px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="logo">Antonio Llano</div>
-            <ul class="nav">
-                <li><a href="#about" class="active" onclick="showSection('about', this)">About</a></li>
-                <li><a href="#experience" onclick="showSection('experience', this)">Experience</a></li>
-                <li><a href="#projects" onclick="showSection('projects', this)">Projects</a></li>
-                <li><a href="#education" onclick="showSection('education', this)">Education</a></li>
-            </ul>
-            <div class="contact">
-                <p>llano@stanford.edu</p>
-                <p>+1 415-225-8641</p>
-            </div>
-        </div>
+        <h1>Antonio Llano</h1>
         
-        <div class="content">
-            <div class="tab-buttons">
-                <button class="active" onclick="showSection('about', document.querySelector('.nav a[href=\'#about\']'))">About</button>
-                <button onclick="showSection('experience', document.querySelector('.nav a[href=\'#experience\']'))">Experience</button>
-                <button onclick="showSection('projects', document.querySelector('.nav a[href=\'#projects\']'))">Projects</button>
-                <button onclick="showSection('education', document.querySelector('.nav a[href=\'#education\']'))">Education</button>
+        <section id="about">
+            <h2>Hi, I like making stuff etc etc.</h2>
+            <p>Currently building <a href="https://www.cradla.com">cradla.com</a>.</p>
+            <p>Freshman @ Stanford. Prev: quant developer intern @ Intelneuron, DNA computing researcher @ Duke Reif Lab, SWE intern @ Sony. National computing olympiad champion '21 [🇨🇴]. 3x IOI training camp qualifier, 1x IMO training camp qualifier.</p>
+            
+            <div class="profile-images">
+                <img src="images/image1.jpeg" alt="Antonio Llano" class="profile-image">
+                <img src="images/image2.JPG" alt="Antonio Llano" class="profile-image">
             </div>
-            
-            <section id="about" class="active">
-                <h1>About</h1>
-                <p>Stanford CS & Bioengineering student with experience in AI, machine learning, and quantitative finance. I've managed ML systems handling $14MM in assets and achieved +15% YoY returns through RNN-based prediction models.</p>
-                
-                <p>My work spans financial forecasting, DNA computing, and specialized AI implementations. I'm passionate about using technology to solve complex problems in finance and computational biology.</p>
-            </section>
-            
-            <section id="experience">
-                <h1>Experience</h1>
-                
-                <div class="experience">
-                    <h3>Intelneuron LP</h3>
-                    <div class="experience-meta">Quantitative Development Intern | 2022-2024</div>
-                    <p>As the only developer in the team, I trained RNNs with $14MM in assets under management that predicted the performance of the S&P 500 daily; automated the data retrieval of various commodities, stocks, and macro data; and built the compute cluster to train and serve the AI model, lowering compute costs and reducing backtesting running time from 15 days to 5.</p>
-                    <p class="highlight">Outcomes: +15% returns year over year, expanded from $2.3MM to $14MM AUM</p>
-                </div>
-                
-                <div class="experience">
-                    <h3>Duke University Reif Laboratory</h3>
-                    <div class="experience-meta">Student Researcher | 2023-2024</div>
-                    <p>The Reif Group works on devising leading-edge DNA computers to meet the world's future energy and storage needs. As an intern, I developed ML and DNA computing models; Cut DNA structure illustration time by ~95%; Developed nucleotide sequence generation software (pSequin) used in the lab daily.</p>
-                    <p class="highlight">Outcomes: 95% reduction in DNA structure illustration time, created daily-use software</p>
-                </div>
-                
-                <div class="experience">
-                    <h3>Innovacol Foundation</h3>
-                    <div class="experience-meta">Head Software Developer | 2021-2022</div>
-                    <p>Taught NLP, computer vision, and time-series forecasting through 2-month-long courses; Programmed the website; Brought host speakers and students from Google, NASA, MIT, and Stanford.</p>
-                </div>
-            </section>
-            
-            <section id="projects">
-                <h1>Projects</h1>
-                
-                <h2>S&P 500 Prediction Model</h2>
-                <p>RNN architecture for market pattern recognition achieving +15% YoY returns. Automated data pipeline with real-time macro indicators. Deployed on optimized AWS infrastructure.</p>
-                
-                <h2>pSequin DNA Sequence Generator</h2>
-                <p>Software for nucleotide sequence optimization used daily in Duke's Reif Lab. Reduced sequence design time by 95% through machine learning algorithms.</p>
-                
-                <h2>ML Compute Cluster Optimization</h2>
-                <p>Redesigned AWS architecture for ML workloads, reducing backtesting time from 15 days to 5 and significantly lowering compute costs.</p>
-                
-                <h2>ProductionLogik iOS App</h2>
-                <p>Production management system developed for Sony Pictures as sole iOS developer, streamlining media production workflows.</p>
-            </section>
-            
-            <section id="education">
-                <h1>Education</h1>
-                
-                <h2>Stanford University | 2024-2028</h2>
-                <p>B.S. Computer Science, Bioengineering</p>
-                <p><strong>Relevant Coursework:</strong> Deep Learning for Computer Vision, Deep Reinforcement Learning, AI Principles and Techniques, Probability for CS</p>
-                
-                <h2>International Olympiad in Informatics (IOI) | 2020, 2022, 2023</h2>
-                <p>First Place National Informatics Olympiad. Iberoamerican Olympiads Representative: 2x Informatics.</p>
-                
-                <h2>International Mathematics Olympiad (IMO) Training Camps</h2>
-                <p>15th Place (T12) National Mathematics Olympiad. Iberoamerican Olympiads Representative: 1x Mathematics.</p>
-            </section>
-        </div>
+            <p>Why even have a website? idk yet.</p>
+            <img src="https://ghchart.rshah.org/llanoajm" alt="2016rshah's Github chart" />
+        </section>
     </div>
-    
-    <script>
-        function showSection(sectionId, linkElement) {
-            // Hide all sections
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Show the selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Update active state in sidebar nav
-            document.querySelectorAll('.nav a').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            linkElement.classList.add('active');
-            
-            // Update active state in mobile tab buttons
-            document.querySelectorAll('.tab-buttons button').forEach(button => {
-                button.classList.remove('active');
-            });
-            
-            document.querySelectorAll('.tab-buttons button').forEach(button => {
-                if (button.textContent === linkElement.textContent) {
-                    button.classList.add('active');
-                }
-            });
-        }
-    </script>
 </body>
 </html>
